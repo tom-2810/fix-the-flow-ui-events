@@ -64,7 +64,7 @@ function checkKeyPressed(e) {
   switch (e.keyCode) {
     case 32:
       document.querySelectorAll('a').forEach(function (element) {
-        element.classList.add('gradient');
+        element.classList.toggle('gradient');
       })
   }
 }
