@@ -8,9 +8,10 @@ let the = document.querySelector('a:nth-of-type(7)');
 let flow = document.querySelector('a:nth-of-type(8)');
 let user = document.querySelector('a:nth-of-type(9)');
 let interface = document.querySelector('a:nth-of-type(10)');
-let interaction = document.querySelector('a:nth-of-type(12)');
+let interaction = document.querySelector('a:nth-of-type(11)');
 
 var rotateDegrees = 0;
+
 
 document.addEventListener('keydown', checkKeyPressed);
 
@@ -56,8 +57,8 @@ function rotateHandler(element, degrees) {
   element.style.setProperty('--degrees', degrees + "deg");
 }
 
-function jumpHandler(element) {
-  element.classList.toggle('jump');
+function jumpHandler() {
+  interaction.classList.toggle('jump')
 }
 
 function checkKeyPressed(e) {

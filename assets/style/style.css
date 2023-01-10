@@ -110,7 +110,7 @@ section .fix {
 
 /* Gradient background */
 .gradient:not(.active) {
-  background: linear-gradient(45deg, rgb(114, 0, 207), rgb(0, 183, 255));
+  background: linear-gradient(45deg, rgb(254, 178, 0), rgb(255, 0, 0));
 	background-size: 200% 300%;
 	animation: gradient 3s infinite;
   color: var(--primary);
@@ -131,7 +131,7 @@ section .fix {
 /* Error animation */
 
 .error {
-  animation: error .2s;
+  animation: error .08s;
   animation-iteration-count: 3;
   background-color: red;
   color: var(--primary);
@@ -140,16 +140,10 @@ section .fix {
 
 @keyframes error {
   0% {
-    rotate: 0deg;
+    transform: translateX(.3rem);
   }
-
-  50% {
-    rotate: -4deg;
-
-  }
-
   100% {
-    rotate: 4deg;
+    transform: translateX(-.3rem);
   }
 }
 
