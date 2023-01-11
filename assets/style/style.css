@@ -12,21 +12,24 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
-  margin: auto;
-  padding: 2rem;
+  /* margin: auto; */
+  /* padding: 2rem; */
   font-family: 'Open Sans', sans-serif;
   font-size: 2rem;
   height: 100vh;
   background: var(--secondary);
+  overflow: hidden;
 }
 
 section {
   display: flex;
   flex-wrap: wrap;
-  max-width: 90vw;
+  max-width: 100vw;
+  padding: 2rem;
 }
 
 a {
@@ -39,6 +42,21 @@ a {
   border-radius: var(--pill);
   font-weight: normal;
   text-decoration: none;
+}
+
+.colorBackground {
+  position: absolute;
+  width: 100rem;
+  height: 100rem;
+  /* background-color: blue; */
+  transition: .8s;
+  height: 100%;
+  clip-path: circle(0%);
+  z-index: -1;
+}
+
+.fill {
+  clip-path: circle(100%);
 }
 
 .active {
@@ -222,5 +240,51 @@ section .fix {
   }
   100% {
     transform: scale(0);
+  }
+}
+
+/* Grow animation */
+
+.grow {
+  animation: grow 1s;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2) rotate(180deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Fly animation */
+
+.fly {
+  position: relative;
+  animation: fly 4s;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: rotate(10deg) translateX(-2em) scale(.8);
+  }
+  50% {
+    transform: rotate(-5deg) translateX(100em);
+  }
+  80% {
+    transform: translateY(100em);
+  }
+  90% {
+    transform: translateY(-1em) scale(.4);
+  }
+  100% {
+    transform: scale(1);
   }
 }
