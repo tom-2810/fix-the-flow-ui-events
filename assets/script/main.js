@@ -90,11 +90,11 @@ function dblclickHandler(element) {
 function colorFillHandler(element) {
   const colorBackground = document.querySelector(".colorBackground");
 
-  colorBackground.style.backgroundColor = randomColor();
+  colorBackground.style.backgroundColor = "var(--highlight-primary)";
   colorBackground.classList.toggle("fill");
 }
 
-function randomColor() {
-  const randomColor = Math.floor(Math.random()*16777215).toString(16);
-  return `#${randomColor}`;
-}
+// function randomColor() {
+//   const randomColor = Math.floor(Math.random()*16777215).toString(16);
+//   return `#${randomColor}`;
+// }
