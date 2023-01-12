@@ -307,3 +307,27 @@ section .fix {
     transform: scale(1);
   }
 }
+
+/* Pusle animation */
+
+.pulse-circle {
+  border-radius: 50%;
+  background-color: var(--highlight-secondary);
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  opacity: 0;
+  animation: pulse 4s infinite cubic-bezier(.36, .11, .89, .32);
+  z-index: -1;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(.5, .5);
+    opacity: .5;
+  }
+  to {
+    transform: scale(2.5, 2.5);
+    opacity: 0;
+  }
+}
