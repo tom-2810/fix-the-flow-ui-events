@@ -10,14 +10,17 @@ let user = document.querySelector('a:nth-of-type(8)');
 let interface = document.querySelector('a:nth-of-type(9)');
 let events = document.querySelector('a:nth-of-type(10)')
 let interaction = document.querySelector('a:nth-of-type(11)');
-var allActive = document.querySelectorAll(".active");
+let video = document.querySelector("video");
+
 
 var rotateDegrees = 0;
 
 document.addEventListener('keydown', checkKeyPressed);
 
-frontend.addEventListener('click', () => errorHandler(frontend));
-frontend.addEventListener('animationend', () => errorHandler(frontend));
+frontend.addEventListener('click', () => videoHandler());
+
+the.addEventListener('click', () => errorHandler(the));
+the.addEventListener('animationend', () => errorHandler(the));
 
 design.addEventListener('click', () => focusHandler(design));
 design.addEventListener('animationend', () => focusHandler(design));
@@ -34,7 +37,9 @@ fix.addEventListener('animationend', () => poofHandler(fix));
 sprint5.addEventListener('click', colorFillHandler);
 
 events.addEventListener('mousedown', () => flyHandler(events));
-events.addEventListener('animationend', () => flyHandler(events))
+events.addEventListener('animationend', () => flyHandler(events));
+
+user.addEventListener('click', () => pulseHandler(user));
 
 document.addEventListener('wheel', function (e) {
   rotateDegrees += e.deltaY * .6;
@@ -77,9 +82,7 @@ function flyHandler(element) {
 function checkKeyPressed(e) {
   switch (e.keyCode) {
     case 32:
-      document.querySelectorAll('a').forEach(function (element) {
-        element.classList.toggle('gradient');
-      })
+      document.body.classList.toggle('gradient')
   }
 }
 
@@ -92,6 +95,17 @@ function colorFillHandler(element) {
 
   colorBackground.style.backgroundColor = "var(--highlight-primary)";
   colorBackground.classList.toggle("fill");
+}
+
+function pulseHandler(element) {
+  element.querySelectorAll('.pulse-circle').forEach( (circle) => {
+    circle.classList.toggle('pulse');
+  });
+}
+
+function videoHandler() {
+  video.classList.toggle('play');
+  video.paused ? video.play() : video.pause();
 }
 
 // function randomColor() {

@@ -8,6 +8,7 @@
   --pill: 2rem;
   --line: 0.1rem;
   --degrees: 0;
+  --default-height: 4rem;
 }
 
 * {
@@ -39,12 +40,27 @@ a {
   align-items: center;
   margin: 0.2em;
   padding: 0.4em 0.8em;
+  height: var(--default-height);
   background: var(--secondary);
   color: var(--highlight-primary);
   border: var(--line) solid var(--highlight-primary);
   border-radius: var(--pill);
   font-weight: normal;
   text-decoration: none;
+}
+
+video {
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%; 
+  height: 100%;
+  z-index: -1;
+}
+
+video.play {
+  display: block;
 }
 
 .colorBackground {
@@ -128,10 +144,10 @@ section .fix {
 /* Jouw animaties */
 
 /* Gradient background */
-.gradient:not(.active) {
-  background: linear-gradient(45deg, rgb(254, 178, 0), rgb(255, 0, 0));
+.gradient {
+  background: linear-gradient(45deg, rgb(153, 0, 255), rgb(0, 255, 221));
   background-size: 200% 300%;
-  animation: gradient 3s infinite;
+  animation: gradient 10s infinite;
   color: var(--primary);
 }
 
@@ -311,23 +327,26 @@ section .fix {
 /* Pusle animation */
 
 .pulse-circle {
-  border-radius: 50%;
+  border-radius: var(--pill);
   background-color: var(--highlight-secondary);
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: var(--default-height);
   position: absolute;
   opacity: 0;
-  animation: pulse 4s infinite cubic-bezier(.36, .11, .89, .32);
   z-index: -1;
+}
+
+.pulse {
+  animation: pulse 4s infinite cubic-bezier(.36, .11, .89, .32);
 }
 
 @keyframes pulse {
   from {
     transform: scale(.5, .5);
-    opacity: .5;
+    opacity: .8;
   }
   to {
-    transform: scale(2.5, 2.5);
+    transform: scale(3, 3);
     opacity: 0;
   }
 }
