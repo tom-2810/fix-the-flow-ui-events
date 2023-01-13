@@ -17,7 +17,7 @@ var rotateDegrees = 0;
 
 document.addEventListener('keydown', checkKeyPressed);
 
-frontend.addEventListener('click', () => videoHandler());
+frontend.addEventListener('click', () => videoHandler);
 
 the.addEventListener('click', () => errorHandler(the));
 the.addEventListener('animationend', () => errorHandler(the));
