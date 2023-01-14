@@ -19,6 +19,9 @@ document.addEventListener('keydown', checkKeyPressed);
 
 frontend.addEventListener('click', videoHandler);
 
+flow.addEventListener('click', () => stretchHandler(flow));
+flow.addEventListener('animationend', () => stretchHandler(flow));
+
 the.addEventListener('click', () => errorHandler(the));
 the.addEventListener('animationend', () => errorHandler(the));
 
@@ -98,7 +101,7 @@ function colorFillHandler(element) {
 }
 
 function pulseHandler(element) {
-  element.querySelectorAll('.pulse-circle').forEach( (circle) => {
+  element.querySelectorAll('.pulse-circle').forEach((circle) => {
     circle.classList.toggle('pulse');
   });
 }
@@ -109,7 +112,6 @@ function videoHandler() {
   video.paused ? video.play() : video.pause();
 }
 
-// function randomColor() {
-//   const randomColor = Math.floor(Math.random()*16777215).toString(16);
-//   return `#${randomColor}`;
-// }
+function stretchHandler(element) {
+  element.classList.toggle('stretch');
+}
