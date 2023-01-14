@@ -17,7 +17,7 @@ var rotateDegrees = 0;
 
 document.addEventListener('keydown', checkKeyPressed);
 
-frontend.addEventListener('click', () => videoHandler);
+frontend.addEventListener('click', videoHandler);
 
 the.addEventListener('click', () => errorHandler(the));
 the.addEventListener('animationend', () => errorHandler(the));
@@ -104,6 +104,7 @@ function pulseHandler(element) {
 }
 
 function videoHandler() {
+  console.log("test");
   video.classList.toggle('play');
   video.paused ? video.play() : video.pause();
 }

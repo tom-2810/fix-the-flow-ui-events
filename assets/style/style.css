@@ -17,7 +17,7 @@
 }
 
 body {
-  padding: 2rem;
+  margin: 2rem;
   font-family: 'Open Sans', sans-serif;
   font-size: 2rem;
   height: 100vh;
@@ -28,8 +28,7 @@ body {
 section {
   display: flex;
   flex-wrap: wrap;
-  max-width: 90vw;
-  /* padding: 2rem; */
+
 }
 
 a {
@@ -65,9 +64,9 @@ video.play {
 
 .colorBackground {
   position: absolute;
-  width: 200vw;
-  height: 200vh;
-  transition: clip-path 1.5s;
+  width: 150vw;
+  height: 300vh;
+  transition: clip-path 1.2s;
   clip-path: circle(0%);
   z-index: -1;
 }
